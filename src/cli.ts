@@ -151,7 +151,9 @@ async function main() {
 
   program
     .command("start")
-    .description("Start your vibe coding")
+    .description(
+      "Setup the current folder for vibe-saver to manage. You should generate a .gitignore file first in your editor."
+    )
     .action(() => runCmd("git init"));
 
   program
@@ -166,12 +168,14 @@ async function main() {
 
   program
     .command("push")
-    .description("Sync your vibes to cloud")
+    .description("Sync your vibes to the cloud")
     .action(() => runCmd("git push"));
 
   program
     .command("pull")
-    .description("Get latest vibes")
+    .description(
+      "Get latest vibes from the cloud (if you're working on multiple computers)"
+    )
     .action(() => runCmd("git pull"));
 
   program

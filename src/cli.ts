@@ -3,6 +3,7 @@ import { execSync } from "child_process";
 import { Command } from "commander";
 import chalk from "chalk";
 import { checkGitInstallation } from "./utils/gitCheck.js";
+import { detectShell, installShellCompletion } from "./utils/shellUtils.js";
 
 const runCmd = (cmd: string) => {
   try {
@@ -68,6 +69,35 @@ ${commands
   }
 };
 
+async function installCompletions(commands: string[]): Promise<void> {
+  try {
+    const shell = detectShell();
+    const completionScript = generateCompletionScript(shell.name, commands);
+
+    const result = await installShellCompletion(completionScript, shell);
+
+    if (result.success) {
+      console.log(chalk.green(`✅ Success! ${result.message}`));
+      console.log(chalk.yellow(`\nTo activate completions right away, run:`));
+      console.log(chalk.cyan(`source ${shell.configFile}`));
+    } else {
+      console.log(chalk.yellow(`⚠️ ${result.message}`));
+      console.log(chalk.yellow(`\nTo manually set up completions, run:`));
+      console.log(
+        chalk.cyan(`vibe completion ${shell.name} >> ${shell.configFile}`)
+      );
+    }
+  } catch (err) {
+    console.error(
+      chalk.red(
+        `Error setting up completions: ${
+          err instanceof Error ? err.message : String(err)
+        }`
+      )
+    );
+  }
+}
+
 async function main() {
   // Check git installation first
   const gitInfo = await checkGitInstallation();
@@ -93,6 +123,7 @@ async function main() {
     "history",
     "publish",
     "help",
+    "install",
   ];
 
   program
@@ -108,7 +139,7 @@ async function main() {
       sortOptions: true,
     });
 
-  // Add shell completion support
+  // Add shell completion support (hidden from normal help)
   program
     .command("completion", { hidden: true })
     .description("Generate shell completion script")
@@ -126,27 +157,16 @@ async function main() {
       }
 
       const script = generateCompletionScript(detectedShell, commands);
-      if (script) {
-        console.log(script);
-        console.log(
-          chalk.yellow(
-            "\nTo enable completions, add this to your shell config:"
-          )
-        );
-        switch (detectedShell) {
-          case "bash":
-            console.log(chalk.cyan("\nSource this script in your ~/.bashrc"));
-            break;
-          case "zsh":
-            console.log(chalk.cyan("\nSource this script in your ~/.zshrc"));
-            break;
-          case "fish":
-            console.log(
-              chalk.cyan("\nSave this to ~/.config/fish/completions/vibe.fish")
-            );
-            break;
-        }
-      }
+      console.log(script);
+    });
+
+  // New install command for completions
+  program
+    .command("install")
+    .description("Set up shell completions automatically")
+    .action(async () => {
+      console.log(chalk.green("Setting up shell completions..."));
+      await installCompletions(commands);
     });
 
   program
@@ -197,6 +217,17 @@ async function main() {
     .command("publish <tag>")
     .description("Publish a stable vibe version")
     .action((tag: string) => runCmd(`git tag ${tag} && git push --tags`));
+
+  // Try to set up completions automatically on first run
+  if (process.argv.length <= 2) {
+    // Only show when running just `vibe` with no arguments
+    if (!process.env.VIBE_COMPLETIONS_CHECKED) {
+      process.env.VIBE_COMPLETIONS_CHECKED = "true";
+      console.log(
+        chalk.blue("Tip: Set up shell completions with `vibe install`")
+      );
+    }
+  }
 
   program.parse(process.argv);
 }

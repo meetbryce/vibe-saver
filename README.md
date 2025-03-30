@@ -8,22 +8,13 @@ Save your code to GitHub and never worry about losing your work. Vibe code safel
 npm install -g vibe-saver
 ```
 
-### Shell Completion
-
-Enable tab completion for vibe commands in your shell:
+Add autocomplete to help you easily find and use `vibe` commands:
 
 ```bash
-# For bash users (add to ~/.bashrc):
-vibe completion bash >> ~/.bashrc
-
-# For zsh users (add to ~/.zshrc):
-vibe completion zsh >> ~/.zshrc
-
-# For fish users:
-vibe completion fish > ~/.config/fish/completions/vibe.fish
+vibe install
 ```
 
-Then restart your shell or run `source ~/.bashrc` (or `~/.zshrc` for zsh).
+Then restart your shell by quitting and reopening the app you use to run `vibe` commands (usually Cursor or Windsurf).
 
 ## Usage
 
@@ -39,17 +30,17 @@ That's it! You can now use Vibe Saver commands to manage your project. Run `vibe
 
 ## Commands
 
-- `vibe start` - Setup the current folder for vibe-saver to manage
-- `vibe clone <url>` - Grab vibes from the cloud
-- `vibe save <message>` - Save your current vibes
-- `vibe push` - Sync your vibes to the cloud
-- `vibe pull` - Get latest vibes from the cloud
+- `vibe save <message>` - Save your current vibes, use this every time you make a successful change
+- `vibe start` - Set up the current folder for vibe-saver to manage (only needed once per project)
+- `vibe clone <url>` - Grab code from the cloud (when you want to work on an existing project for the first time on a machine)
+- `vibe push` - Sync your vibes to the cloud (this uploads all your saves to github)
+- `vibe pull` - Get latest vibes from the cloud (most useful when working on multiple machines)
 - `vibe undo` - Undo last vibe save
 - `vibe status` - Check your current vibe status
 - `vibe history` - See your vibe history
-- `vibe publish <tag>` - Publish a stable vibe version
-- `vibe help [command]` - Display help for a specific command
+- `vibe publish <tag>` - Publish a stable vibe version (use this to track major changes)
 
 ## Need Help?
 
-Run `vibe help` to see all available commands and options.
+- Run `vibe help` to see all available commands and options.
+- `vibe help [command]` - Display help for a specific command

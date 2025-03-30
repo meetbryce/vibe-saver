@@ -1,0 +1,7 @@
+theme: jekyll-theme-cayman
+title: Vibe Saver
+description: Simple cloud backups for your code. Save your work safely.
+show_downloads: true
+github:
+  is_project_page: true
+  repository_url: https://github.com/bryceyork/vibe-saver

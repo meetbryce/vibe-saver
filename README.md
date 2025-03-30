@@ -106,3 +106,7 @@ With these rules in place, Cursor's AI features will understand Vibe Saver comma
 
 - Run `vibe help` to see all available commands and options.
 - `vibe help [command]` - Display help for a specific command
+
+## Website
+
+Visit our [website](https://bryceyork.github.io/vibe-saver/) for more information and documentation.

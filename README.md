@@ -26,12 +26,20 @@ cd your-project
 vibe start
 ```
 
+3. Create your GitHub repository (where you'll backup your vibe saves) → [github.new](github.new)
+4. Connect your folder to your GitHub repository using the repository link (looks like _github.com/username/project-name.git_)
+
+```bash
+vibe connect <github_link>
+```
+
 That's it! You can now use Vibe Saver commands to manage your project. Run `vibe help` if you forget which command to use.
 
 ## Commands
 
 - `vibe save <message>` - Save your current vibes, use this every time you make a successful change
 - `vibe start` - Set up the current folder for vibe-saver to manage (only needed once per project)
+- `vibe connect <github_link>` - Connect your local folder to a GitHub repository
 - `vibe clone <url>` - Grab code from the cloud (when you want to work on an existing project for the first time on a machine)
 - `vibe push` - Sync your vibes to the cloud (this uploads all your saves to github)
 - `vibe pull` - Get latest vibes from the cloud (most useful when working on multiple machines)

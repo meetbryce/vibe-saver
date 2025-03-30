@@ -115,6 +115,7 @@ async function main() {
   const commands = [
     "start",
     "clone",
+    "connect",
     "save",
     "push",
     "pull",
@@ -180,6 +181,17 @@ async function main() {
     .command("clone <url>")
     .description("Grab vibes from the cloud")
     .action((url: string) => runCmd(`git clone ${url}`));
+
+  program
+    .command("connect <github_link>")
+    .description("Connect your local folder to a GitHub repository")
+    .action((githubLink: string) => {
+      console.log(chalk.green("Connecting to GitHub repository..."));
+      runCmd(`git remote add origin ${githubLink}`);
+      runCmd("git branch -M main");
+      runCmd("git push -u origin main");
+      console.log(chalk.green("✅ Successfully connected to GitHub!"));
+    });
 
   program
     .command("save <message>")

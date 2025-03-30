@@ -44,7 +44,7 @@ program
   .action(() => runCmd("git pull"));
 
 program
-  .command("rewind")
+  .command("undo")
   .description("Undo last vibe save")
   .action(() => runCmd("git reset --soft HEAD~1"));
 

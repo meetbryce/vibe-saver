@@ -16,7 +16,11 @@ const runCmd = (cmd) => {
 program
   .name("vibe")
   .description("vibe-saver: effortlessly save your vibes")
-  .version("1.0.0");
+  .version("1.0.0")
+  .enablePositionalOptions()
+  .enableCommandSuggestions()
+  .showSuggestionAfterError()
+  .showHelpAfterError();
 
 program
   .command("start")
@@ -62,5 +66,12 @@ program
   .command("publish <tag>")
   .description("Publish a stable vibe version")
   .action((tag) => runCmd(`git tag ${tag} && git push --tags`));
+
+program
+  .command("completion")
+  .description("Generate shell completion script")
+  .action(() => {
+    console.log(program.configureOutput().generateCompletionScript());
+  });
 
 program.parse(process.argv);

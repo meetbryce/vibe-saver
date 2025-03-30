@@ -1,6 +1,6 @@
 # Vibe Saver
 
-Save your code to GitHub and never worry about losing your work. Vibe safely with vibe saver.
+Save your code to GitHub and never worry about losing your work. Vibe code safely with vibe saver. Includes all the features you need and none of the features you don't. It's git without all the complexity and overwhelm.
 
 ## Installation
 

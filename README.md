@@ -41,7 +41,7 @@ That's it! You can now use Vibe Saver commands to manage your project. Run `vibe
 - `vibe start` - Set up the current folder for vibe-saver to manage (only needed once per project)
 - `vibe connect <github_link>` - Connect your local folder to a GitHub repository
 - `vibe clone <url>` - Grab code from the cloud (when you want to work on an existing project for the first time on a machine)
-- `vibe push` - Sync your vibes to the cloud (this uploads all your saves to github)
+- `vibe sync` - Sync/push your vibes to the cloud (this uploads all your saves to github)
 - `vibe pull` - Get latest vibes from the cloud (most useful when working on multiple machines)
 - `vibe undo` - Undo last vibe save
 - `vibe status` - Check your current vibe status

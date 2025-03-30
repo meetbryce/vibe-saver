@@ -117,7 +117,7 @@ async function main() {
     "clone",
     "connect",
     "save",
-    "push",
+    "sync",
     "pull",
     "undo",
     "status",
@@ -199,7 +199,7 @@ async function main() {
     .action((msg: string) => runCmd(`git add . && git commit -m "${msg}"`));
 
   program
-    .command("push")
+    .command("sync")
     .description("Sync your vibes to the cloud")
     .action(() => runCmd("git push"));
 

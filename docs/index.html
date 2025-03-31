@@ -1,175 +1,327 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vibe Saver - Simple Code Backup for Modern Devs</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Vibe Saver - Simple Code Backup for Vibe Coders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            letterSpacing: {
+              tight: "0.75px",
+            },
+            backgroundImage: {
+              "brand-gradient": "linear-gradient(90deg,#7186ff 11%,#fe7587)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        letter-spacing: 0.75px;
+      }
+      .bg-brand-gradient {
+        background-image: linear-gradient(90deg, #7186ff 11%, #fe7587);
+      }
+      .text-gradient {
+        background-image: linear-gradient(90deg, #7186ff 11%, #fe7587);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .btn-gradient:hover {
+        opacity: 0.9;
+      }
+    </style>
   </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1><i class="fas fa-cloud-upload-alt"></i> Vibe Saver</h1>
-        <p class="tagline">Simple cloud backups. Save your code safely.</p>
-        <div class="cta-buttons">
-          <a href="#installation" class="btn primary">Get Started</a>
+  <body class="bg-gray-900 text-gray-100 font-sans">
+    <header class="py-16 px-4 relative isolate overflow-hidden">
+      <div class="container mx-auto max-w-4xl py-24">
+        <h1 class="text-4xl md:text-5xl font-bold mb-3 text-gradient">
+          Vibe Saver
+        </h1>
+        <p class="text-xl text-gray-300 mb-8">
+          Simple code management and GitHub backups. Vibe code with peace of
+          mind.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="#installation"
+            class="px-6 py-3 rounded-lg bg-brand-gradient text-white font-medium shadow-lg btn-gradient"
+            >Get Started</a
+          >
           <a
             href="https://github.com/bryceyork/vibe-saver"
-            class="btn secondary"
-            ><i class="fab fa-github"></i> View Source</a
+            class="px-6 py-3 rounded-lg bg-gray-800 text-white font-medium shadow-lg hover:bg-gray-700 transition"
           >
+            <i class="fab fa-github mr-2"></i> View Source
+          </a>
         </div>
+      </div>
+      <div
+        class="absolute inset-0 -z-10 transform-gpu overflow-hidden blur-3xl"
+      >
+        <div
+          class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-brand-gradient opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+          style="
+            clip-path: polygon(
+              74.1% 44.1%,
+              100% 61.6%,
+              97.5% 26.9%,
+              85.5% 0.1%,
+              80.7% 2%,
+              72.5% 32.5%,
+              60.2% 62.4%,
+              52.4% 68.1%,
+              47.5% 58.3%,
+              45.2% 34.5%,
+              27.5% 76.7%,
+              0.1% 64.9%,
+              17.9% 100%,
+              27.6% 76.8%,
+              76.1% 97.7%,
+              74.1% 44.1%
+            );
+          "
+        ></div>
       </div>
     </header>
 
-    <section class="features">
-      <div class="container">
-        <h2>Why Vibe Saver?</h2>
-        <div class="feature-grid">
-          <div class="feature-card">
-            <i class="fas fa-rocket"></i>
-            <h3>Simple Commands</h3>
-            <p>Easy to remember commands that do exactly what you need</p>
+    <section class="py-16 px-4 bg-gray-800">
+      <div class="container mx-auto max-w-7xl">
+        <h2 class="text-3xl font-bold mb-10 text-center text-gradient">
+          Why Vibe Saver?
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+            <i class="fas fa-rocket text-3xl mb-4 text-gradient"></i>
+            <h3 class="text-xl font-bold mb-2">Simple Commands</h3>
+            <p class="text-gray-300">
+              Easy to remember commands that do exactly what you need
+            </p>
           </div>
-          <div class="feature-card">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Never Lose Work</h3>
-            <p>Stop worrying about code loss in Cursor or Windsurf</p>
+          <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+            <i class="fas fa-shield-alt text-3xl mb-4 text-gradient"></i>
+            <h3 class="text-xl font-bold mb-2">Never Lose Work</h3>
+            <p class="text-gray-300">
+              Stop worrying about code loss in Cursor or Windsurf
+            </p>
           </div>
-          <div class="feature-card">
-            <i class="fas fa-code-branch"></i>
-            <h3>Cloud Backup</h3>
-            <p>Seamlessly store your code in the cloud</p>
+          <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+            <i class="fas fa-code-branch text-3xl mb-4 text-gradient"></i>
+            <h3 class="text-xl font-bold mb-2">GitHub Backup</h3>
+            <p class="text-gray-300">
+              Seamlessly store your code in private GitHub repos
+            </p>
           </div>
-          <div class="feature-card">
-            <i class="fas fa-terminal"></i>
-            <h3>Cursor Compatible</h3>
-            <p>Works perfectly with Cursor's AI features</p>
+          <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+            <i class="fas fa-terminal text-3xl mb-4 text-gradient"></i>
+            <h3 class="text-xl font-bold mb-2">Cursor Compatible</h3>
+            <p class="text-gray-300">
+              Works perfectly with Cursor's AI features
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="installation" class="installation">
-      <div class="container">
-        <h2>Installation</h2>
-        <div class="code-block">
-          <pre><code>npm install -g vibe-saver</code></pre>
-          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <section id="installation" class="py-16 px-4">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl font-bold mb-10 text-center text-gradient">
+          Installation
+        </h2>
+        <div class="bg-gray-800 rounded-lg p-4 mb-6 relative">
+          <pre
+            class="text-gray-300"
+          ><code>npm install -g vibe-saver</code></pre>
+          <button
+            class="absolute top-3 right-3 text-gray-400 hover:text-white"
+            onclick="copyCode(this)"
+          >
+            <i class="fas fa-copy"></i>
+          </button>
         </div>
-        <p>Add autocomplete:</p>
-        <div class="code-block">
-          <pre><code>vibe install</code></pre>
-          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <p class="mb-4 text-gray-300">Add autocomplete:</p>
+        <div class="bg-gray-800 rounded-lg p-4 mb-6 relative">
+          <pre class="text-gray-300"><code>vibe install</code></pre>
+          <button
+            class="absolute top-3 right-3 text-gray-400 hover:text-white"
+            onclick="copyCode(this)"
+          >
+            <i class="fas fa-copy"></i>
+          </button>
         </div>
-        <p>Then restart your shell.</p>
+        <p class="text-gray-300">
+          Then restart your editor or command line app.
+        </p>
       </div>
     </section>
 
-    <section class="usage">
-      <div class="container">
-        <h2>Quick Start</h2>
-        <ol class="steps">
-          <li>
-            <h3>Navigate to your project</h3>
-            <div class="code-block">
-              <pre><code>cd your-project</code></pre>
+    <section class="py-16 px-4 bg-gray-800">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl font-bold mb-10 text-center text-gradient">
+          Quick Start
+        </h2>
+        <ol class="space-y-8">
+          <li class="bg-gray-700 p-6 rounded-xl">
+            <h3 class="text-xl font-bold mb-2">1. Navigate to your project</h3>
+            <div class="bg-gray-800 rounded-lg p-4">
+              <pre class="text-gray-300"><code>cd your-project</code></pre>
             </div>
           </li>
-          <li>
-            <h3>Initialize with Vibe Saver</h3>
-            <div class="code-block">
-              <pre><code>vibe start</code></pre>
+          <li class="bg-gray-700 p-6 rounded-xl">
+            <h3 class="text-xl font-bold mb-2">
+              2. Initialize with Vibe Saver
+            </h3>
+            <div class="bg-gray-800 rounded-lg p-4">
+              <pre class="text-gray-300"><code>vibe start</code></pre>
             </div>
+            <p class="mt-2 text-gray-300">
+              This configures the current folder for vibe-saver to manage
+            </p>
           </li>
-          <li>
-            <h3>Connect to Cloud Repository</h3>
-            <div class="code-block">
-              <pre><code>vibe connect &lt;repository_link&gt;</code></pre>
+          <li class="bg-gray-700 p-6 rounded-xl">
+            <h3 class="text-xl font-bold mb-2">
+              3. Connect to GitHub Repository
+            </h3>
+            <div class="bg-gray-800 rounded-lg p-4">
+              <pre
+                class="text-gray-300"
+              ><code>vibe connect &lt;repository_link&gt;</code></pre>
             </div>
+            <p class="mt-2 text-gray-300">
+              Your repository link should be in the format:
+              https://github.com/username/repo.git
+            </p>
           </li>
-          <li>
-            <h3>Save your work</h3>
-            <div class="code-block">
-              <pre><code>vibe save "Added new feature"</code></pre>
+          <li class="bg-gray-700 p-6 rounded-xl">
+            <h3 class="text-xl font-bold mb-2">4. Save your work</h3>
+            <div class="bg-gray-800 rounded-lg p-4">
+              <pre
+                class="text-gray-300"
+              ><code>vibe save "Added new feature"</code></pre>
             </div>
+            <p class="mt-2 text-gray-300">
+              Save your changes with a quick description so you never lose your
+              progress.
+            </p>
           </li>
-          <li>
-            <h3>Sync to Cloud</h3>
-            <div class="code-block">
-              <pre><code>vibe sync</code></pre>
+          <li class="bg-gray-700 p-6 rounded-xl">
+            <h3 class="text-xl font-bold mb-2">5. Sync to GitHub</h3>
+            <div class="bg-gray-800 rounded-lg p-4">
+              <pre class="text-gray-300"><code>vibe sync</code></pre>
             </div>
+            <p class="mt-2 text-gray-300">
+              Pushes all your saved changes to the remote repository on GitHub.
+            </p>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="commands">
-      <div class="container">
-        <h2>Commands Reference</h2>
-        <div class="commands-grid">
-          <div class="command-card">
-            <code>vibe save &lt;message&gt;</code>
-            <p>Save your current vibes</p>
+    <section class="py-16 px-4">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl font-bold mb-10 text-center text-gradient">
+          Commands Reference
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <code class="text-gradient font-semibold"
+              >vibe save &lt;message&gt;</code
+            >
+            <p class="text-gray-300 mt-2">
+              Save your current vibes (git add + commit)
+            </p>
           </div>
-          <div class="command-card">
-            <code>vibe start</code>
-            <p>Set up current folder for vibe-saver</p>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <code class="text-gradient font-semibold">vibe start</code>
+            <p class="text-gray-300 mt-2">
+              Set up current folder for vibe-saver (git init)
+            </p>
           </div>
-          <div class="command-card">
-            <code>vibe connect &lt;repository_link&gt;</code>
-            <p>Connect to cloud repository</p>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <code class="text-gradient font-semibold"
+              >vibe connect &lt;repository_link&gt;</code
+            >
+            <p class="text-gray-300 mt-2">
+              Connect to GitHub repository (git remote add)
+            </p>
           </div>
-          <div class="command-card">
-            <code>vibe clone &lt;url&gt;</code>
-            <p>Grab code from the cloud</p>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <code class="text-gradient font-semibold"
+              >vibe clone &lt;url&gt;</code
+            >
+            <p class="text-gray-300 mt-2">Grab code from GitHub (git clone)</p>
           </div>
-          <div class="command-card">
-            <code>vibe sync</code>
-            <p>Push your vibes to the cloud</p>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <code class="text-gradient font-semibold">vibe sync</code>
+            <p class="text-gray-300 mt-2">
+              Push your vibes to GitHub (git push)
+            </p>
           </div>
-          <div class="command-card">
-            <code>vibe pull</code>
-            <p>Get latest vibes from the cloud</p>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <code class="text-gradient font-semibold">vibe pull</code>
+            <p class="text-gray-300 mt-2">
+              Get latest vibes from GitHub (git pull)
+            </p>
           </div>
-          <div class="command-card">
-            <code>vibe undo</code>
-            <p>Undo last vibe save</p>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <code class="text-gradient font-semibold">vibe undo</code>
+            <p class="text-gray-300 mt-2">
+              Undo last vibe save (git reset HEAD~1)
+            </p>
           </div>
-          <div class="command-card">
-            <code>vibe status</code>
-            <p>Check your current vibe status</p>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <code class="text-gradient font-semibold">vibe status</code>
+            <p class="text-gray-300 mt-2">
+              Check your current vibe status (git status)
+            </p>
           </div>
-          <div class="command-card">
-            <code>vibe history</code>
-            <p>See your vibe history</p>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <code class="text-gradient font-semibold">vibe history</code>
+            <p class="text-gray-300 mt-2">See your vibe history (git log)</p>
           </div>
-          <div class="command-card">
-            <code>vibe publish &lt;tag&gt;</code>
-            <p>Publish a stable vibe version</p>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <code class="text-gradient font-semibold"
+              >vibe publish &lt;tag&gt;</code
+            >
+            <p class="text-gray-300 mt-2">
+              Publish a stable vibe version (git tag)
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cursor-integration">
-      <div class="container">
-        <h2>Cursor Integration</h2>
-        <p>
-          Vibe Saver works perfectly with Cursor editor! Add these rules to
-          enhance your workflow:
+    <section class="py-16 px-4 bg-gray-800">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl font-bold mb-10 text-center text-gradient">
+          Cursor Integration
+        </h2>
+        <p class="text-gray-300 mb-6">
+          Vibe Saver works perfectly with Cursor! Add these global rules to
+          enhance your workflow & even have cursor help manage your code:
         </p>
-        <div class="code-block">
-          <pre><code># Vibe Saver Rules
+        <div class="bg-gray-900 rounded-lg p-6 relative">
+          <pre
+            class="text-gray-300 whitespace-pre-wrap overflow-x-auto"
+          ><code># Vibe Saver Rules
 
 When I mention vibe commands, understand these help you manage your code:
 - `vibe save &lt;message&gt;` = Saves your current changes
-- `vibe sync` = Pushes your changes to the cloud
-- `vibe pull` = Gets latest changes from the cloud
+- `vibe sync` = Pushes your changes to GitHub
+- `vibe pull` = Gets latest changes from GitHub
 - `vibe status` = Shows current state of your project
 - `vibe history` = Shows history of your saves
 - `vibe undo` = Reverts your last save
@@ -179,40 +331,56 @@ For common coding workflows, use appropriate vibe commands:
 - Before ending work session: `vibe sync`
 - When starting work: `vibe pull`
 - When unsure of current state: `vibe status`</code></pre>
-          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          <button
+            class="absolute top-6 right-6 text-gray-400 hover:text-white"
+            onclick="copyCode(this)"
+          >
+            <i class="fas fa-copy"></i>
+          </button>
         </div>
       </div>
     </section>
 
-    <footer>
-      <div class="container">
-        <p>
-          &copy; 2024 Vibe Saver. Made with <i class="fas fa-heart"></i> for
-          modern developers.
+    <footer class="py-8 px-4 bg-gray-900 border-t border-gray-800">
+      <div class="container mx-auto max-w-4xl">
+        <p class="text-center text-gray-400">
+          &copy; 2025 Vibe Saver. Made with
+          <i class="fas fa-heart text-gradient"></i> in California for vibe
+          coders everywhere.
         </p>
-        <div class="footer-links">
-          <a href="https://github.com/bryceyork/vibe-saver"
-            ><i class="fab fa-github"></i> Source</a
+        <div class="flex justify-center gap-6 mt-4">
+          <a
+            href="https://github.com/bryceyork/vibe-saver"
+            class="text-gray-400 hover:text-white"
           >
-          <a href="https://github.com/bryceyork/vibe-saver/issues"
-            ><i class="fas fa-bug"></i> Report Issues</a
+            <i class="fab fa-github mr-2"></i> Source
+          </a>
+          <a
+            href="https://github.com/bryceyork/vibe-saver/issues"
+            class="text-gray-400 hover:text-white"
           >
-          <a href="https://www.npmjs.com/package/vibe-saver"
-            ><i class="fab fa-npm"></i> NPM</a
+            <i class="fas fa-bug mr-2"></i> Report Issues
+          </a>
+          <a
+            href="https://www.npmjs.com/package/vibe-saver"
+            class="text-gray-400 hover:text-white"
           >
+            <i class="fab fa-npm mr-2"></i> NPM
+          </a>
         </div>
       </div>
     </footer>
 
     <script>
       function copyCode(button) {
-        const codeBlock = button.previousElementSibling;
+        const codeBlock = button.closest("div").querySelector("code");
         const code = codeBlock.textContent;
 
         navigator.clipboard.writeText(code).then(() => {
-          button.textContent = "Copied!";
+          const originalHTML = button.innerHTML;
+          button.innerHTML = '<i class="fas fa-check"></i>';
           setTimeout(() => {
-            button.textContent = "Copy";
+            button.innerHTML = originalHTML;
           }, 2000);
         });
       }

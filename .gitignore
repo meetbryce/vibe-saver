@@ -10,8 +10,6 @@ Icon
 ._*
 
 # Cursor editor
-.cursor/
-.cursor.json
 .workspace/
 
 # Logs

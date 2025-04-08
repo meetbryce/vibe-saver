@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Website Maintenance Rules
+
+When creating new HTML pages in the `docs/` directory, ensure the Beam Analytics tracking script is included in the `<head>` section.
+
+The script is:
+<script
+  src="https://beamanalytics.b-cdn.net/beam.min.js"
+  data-token="e77f8e0f-1a18-4575-ac9b-976fc07091f1"
+  async
+>
+</script>

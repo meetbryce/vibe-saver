@@ -213,7 +213,12 @@ async function main() {
   program
     .command("undo")
     .description("Undo last vibe save")
-    .action(() => runCmd("git reset --soft HEAD~1"));
+    .action(() => runCmd("git reset --hard HEAD~1"));
+
+  program
+    .command("clear")
+    .description("Clean up all changes since your last vibe save")
+    .action(() => runCmd("git reset --hard HEAD"));
 
   program
     .command("status")

@@ -37,16 +37,18 @@ That's it! You can now use Vibe Saver commands to manage your project. Run `vibe
 
 ## Commands
 
-- `vibe save <message>` - Save your current vibes, use this every time you make a successful change
-- `vibe start` - Set up the current folder for vibe-saver to manage (only needed once per project)
-- `vibe connect <github_link>` - Connect your local folder to a GitHub repository
-- `vibe clone <url>` - Grab code from the cloud (when you want to work on an existing project for the first time on a machine)
-- `vibe sync` - Sync/push your vibes to the cloud (this uploads all your saves to github)
-- `vibe pull` - Get latest vibes from the cloud (most useful when working on multiple machines)
-- `vibe undo` - Undo last vibe save
-- `vibe status` - Check your current vibe status
-- `vibe history` - See your vibe history
-- `vibe publish <tag>` - Publish a stable vibe version (use this to track major changes)
+- `vibe save <message>` - Save your current vibes (git add + commit)
+- `vibe start` - Set up current folder for vibe-saver (git init)
+- `vibe connect <repository_link>` - Connect to GitHub repository (git remote add)
+- `vibe clone <url>` - Grab code from GitHub (git clone)
+- `vibe sync` - Push your vibes to GitHub (git push)
+- `vibe pull` - Get latest vibes from GitHub (git pull)
+- `vibe undo` - Undo last vibe save (git reset --hard HEAD~1)
+- `vibe clear` - Clean up all changes since your last vibe save (git reset --hard HEAD)
+- `vibe status` - Check your current vibe status (git status)
+- `vibe history` - See your vibe history (git log)
+- `vibe publish <tag>` - Publish a stable vibe version (git tag)
+- `vibe install` - One-time setup to enable vibe-saver autocomplete in your terminal
 
 ## Cursor Integration
 
@@ -66,11 +68,17 @@ Vibe Saver is a simplified git wrapper that makes version control easy with comm
 
 When I mention vibe commands, understand these are git operations with the following mappings:
 - `vibe save <message>` = Saves current changes (similar to git add + git commit)
+- `vibe start` = Sets up current folder for vibe-saver (similar to git init)
+- `vibe connect <github_link>` = Connects to GitHub repository (similar to git remote add)
+- `vibe clone <url>` = Grabs code from GitHub (similar to git clone)
 - `vibe sync` = Pushes changes to GitHub (similar to git push)
 - `vibe pull` = Gets latest changes from GitHub (similar to git pull)
+- `vibe undo` = Reverts last save and all unsaved changes (similar to git reset --hard HEAD~1)
+- `vibe clear` = Cleans up all changes since last save (similar to git reset --hard HEAD)
 - `vibe status` = Shows current state (similar to git status)
-- `vibe history` = Shows commit history (similar to git log)
-- `vibe undo` = Reverts last save (similar to git reset)
+- `vibe history` = Shows commit history (similar to git log --oneline --decorate)
+- `vibe publish <tag>` = Publishes a stable version (similar to git tag + git push --tags)
+- `vibe install` = Sets up shell completions for vibe commands
 
 When I ask for help with any Vibe Saver command, suggest the appropriate command syntax and usage examples.
 

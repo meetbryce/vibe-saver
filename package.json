@@ -1,6 +1,6 @@
 {
   "name": "vibe-saver",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Save your code to GitHub and never worry about Cursor or Windsurf messing up your project",
   "main": "dist/cli.js",
   "bin": {

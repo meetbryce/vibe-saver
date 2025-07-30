@@ -244,17 +244,17 @@
         </h2>
         <div class="grid md:grid-cols-2 gap-4">
           <div class="bg-gray-800 p-4 rounded-lg">
+            <code class="text-gradient font-semibold">vibe start</code>
+            <p class="text-gray-300 mt-2">
+              Set up current folder for vibe-saver (git init)
+            </p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg">
             <code class="text-gradient font-semibold"
               >vibe save &lt;message&gt;</code
             >
             <p class="text-gray-300 mt-2">
               Save your current vibes (git add + commit)
-            </p>
-          </div>
-          <div class="bg-gray-800 p-4 rounded-lg">
-            <code class="text-gradient font-semibold">vibe start</code>
-            <p class="text-gray-300 mt-2">
-              Set up current folder for vibe-saver (git init)
             </p>
           </div>
           <div class="bg-gray-800 p-4 rounded-lg">
@@ -286,7 +286,13 @@
           <div class="bg-gray-800 p-4 rounded-lg">
             <code class="text-gradient font-semibold">vibe undo</code>
             <p class="text-gray-300 mt-2">
-              Undo last vibe save (git reset HEAD~1)
+              Undo last vibe save & all unsaved changes (git&nbsp;reset&nbsp;--hard&nbsp;HEAD~1)
+            </p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <code class="text-gradient font-semibold">vibe clear</code>
+            <p class="text-gray-300 mt-2">
+              Clean up all changes since your last vibe save (git&nbsp;reset&nbsp;--hard&nbsp;HEAD)
             </p>
           </div>
           <div class="bg-gray-800 p-4 rounded-lg">
@@ -304,7 +310,15 @@
               >vibe publish &lt;tag&gt;</code
             >
             <p class="text-gray-300 mt-2">
-              Publish a stable vibe version (git tag)
+              Publish a stable vibe version for easy future reference (git tag)
+            </p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <code class="text-gradient font-semibold"
+              >vibe install</code
+            >
+            <p class="text-gray-300 mt-2">
+              One-time setup to enable vibe-saver autocomplete in your terminal
             </p>
           </div>
         </div>
@@ -326,12 +340,18 @@
           ><code># Vibe Saver Rules
 
 When I mention vibe commands, understand these help you manage your code:
-- `vibe save &lt;message&gt;` = Saves your current changes
-- `vibe sync` = Pushes your changes to GitHub
-- `vibe pull` = Gets latest changes from GitHub
-- `vibe status` = Shows current state of your project
-- `vibe history` = Shows history of your saves
-- `vibe undo` = Reverts your last save
+- `vibe save <message>` = Saves current changes (similar to git add + git commit)
+- `vibe start` = Sets up current folder for vibe-saver (similar to git init)
+- `vibe connect <github_link>` = Connects to GitHub repository (similar to git remote add)
+- `vibe clone <url>` = Grabs code from GitHub (similar to git clone)
+- `vibe sync` = Pushes changes to GitHub (similar to git push)
+- `vibe pull` = Gets latest changes from GitHub (similar to git pull)
+- `vibe undo` = Reverts last save and all unsaved changes (similar to git reset --hard HEAD~1)
+- `vibe clear` = Cleans up all changes since last save (similar to git reset --hard HEAD)
+- `vibe status` = Shows current state (similar to git status)
+- `vibe history` = Shows commit history (similar to git log --oneline --decorate)
+- `vibe publish <tag>` = Publishes a stable version (similar to git tag + git push --tags)
+- `vibe install` = Sets up shell completions for vibe commands
 
 For common coding workflows, use appropriate vibe commands:
 - After completing a feature: `vibe save "Add feature X"`

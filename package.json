@@ -4,7 +4,7 @@
   "description": "Save your code to GitHub and never worry about Cursor or Windsurf messing up your project",
   "main": "dist/cli.js",
   "bin": {
-    "vibe": "./dist/cli.js"
+    "vibe": "dist/cli.js"
   },
   "type": "module",
   "license": "GPL-3.0-or-later",

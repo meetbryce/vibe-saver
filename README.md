@@ -1,5 +1,9 @@
 # Vibe Saver
 
+[![npm version](https://img.shields.io/npm/v/vibe-saver.svg)](https://www.npmjs.com/package/vibe-saver)
+[![Downloads](https://img.shields.io/npm/dy/vibe-saver)](https://www.npmjs.com/package/vibe-saver)
+[![License](https://img.shields.io/npm/l/vibe-saver)](https://github.com/bryceyork/vibe-saver/blob/main/LICENSE.md)
+
 Save your code to GitHub and never worry about losing your work. Vibe code safely with vibe saver. Includes all the features you need and none of the features you don't. It's git without all the complexity and overwhelm.
 
 ## Installation

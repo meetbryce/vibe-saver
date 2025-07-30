@@ -201,7 +201,7 @@ async function main() {
   program
     .command("sync")
     .description("Sync your vibes to the cloud")
-    .action(() => runCmd("git push"));
+    .action(() => runCmd("git push && git push --tags"));
 
   program
     .command("pull")
